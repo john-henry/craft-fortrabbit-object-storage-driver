@@ -9,7 +9,7 @@
 namespace workingconcept\imagerfortrabbitobjectstoragedriver;
 
 use workingconcept\imagerfortrabbitobjectstoragedriver\externalstorage\FortrabbitObjectStorage;
-use aelvan\imager\services\ImagerService;
+use spacecatninja\imagerx\services\ImagerService;
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
@@ -27,12 +27,17 @@ class ImagerFortrabbitObjectStorageDriver extends Plugin
 {
     public static $plugin;
     public $schemaVersion = '1.0.0';
-    
+
     public function init()
     {
         parent::init();
         self::$plugin = $this;
 
-        ImagerService::registerExternalStorage('fortrabbit', FortrabbitObjectStorage::class);
+        Event::on(\spacecatninja\imagerx\ImagerX::class,
+            \spacecatninja\imagerx\ImagerX::EVENT_REGISTER_EXTERNAL_STORAGES,
+            static function (\spacecatninja\imagerx\events\RegisterExternalStoragesEvent $event) {
+                $event->storages['fortrabbit'] = FortrabbitObjectStorage::class;
+            }
+        );
     }
 }

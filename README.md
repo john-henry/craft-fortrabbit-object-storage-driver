@@ -1,13 +1,13 @@
-# Imager Storage Driver for fortrabbit Object Storage
+# Imager X Storage Driver for fortrabbit Object Storage
 
-This is an external storage driver for Imager that uploads your [Imager](https://github.com/aelvan/Imager-Craft) transforms to fortrabbit's object storage. Object Storage is an AWS S3 compatible storage type, so the plugin utilizes the same S3 client as Imager's AWS storage does.
+This is an external storage driver for Imager that uploads your [Imager X](https://github.com/spacecatninja/craft-imager-x) transforms to fortrabbit's object storage. Object Storage is an AWS S3 compatible storage type, so the plugin utilizes the same S3 client as Imager X's AWS storage does.
 
 This plugin also serves as a good reference point if you want to create your own external storage driver for Imager to integrate with an unsupported third-party object storage. It's really simple, and you can do it either from a Craft 3 plugin, if you want to share it with the rest of the community (please do!), or a module, if you're using something proprietary/custom.
 
 ## Requirements
 
 - [Craft CMS](https://github.com/craftcms/cms) 3.0.0 or later
-- [Imager](https://github.com/aelvan/Imager-Craft) 2.0 or later
+- [Imager X](https://github.com/spacecatninja/craft-imager-x) 3.0 .0or later
 - [fortrabbit Pro Stack app with Object Storage](https://www.fortrabbit.com/pricing-pro) (if you have a Universal Stack app, that's a different storage type that won't work here)
 
 ## Installation
@@ -27,7 +27,7 @@ To install the plugin, follow these instructions.
 
 ## Configuration
 
-Configure the storage driver by adding new key named `fortrabbit` to the `storagesConfig` config setting in your **imager.php config file**, with the following configuration:
+Configure the storage driver by adding new key named `fortrabbit` to the `storagesConfig` config setting in your **imager-x.php config file**, with the following configuration:
 
     'storageConfig' => [
         'fortrabbit' => [
@@ -60,5 +60,5 @@ Here's an example config, note that the endpoint has to be a complete URL with s
             'requestHeaders' => array(),
         ]
     ],
-    
-Also remember to always empty your Imager transforms cache when adding or removing external storages, as the transforms won't be uploaded if the transform already exists in the cache.
+
+Also remember to always empty your Imager X transforms cache when adding or removing external storages, as the transforms won't be uploaded if the transform already exists in the cache.

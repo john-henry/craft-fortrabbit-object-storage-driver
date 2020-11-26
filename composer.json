@@ -1,13 +1,14 @@
 {
     "name": "workingconcept/imager-fortrabbit-object-storage-driver",
-    "description": "Imager Storage Driver for fortrabbit Object Storage",
+    "description": "Imager X Storage Driver for fortrabbit Object Storage",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "keywords": [
         "craft",
         "cms",
         "craftcms",
         "craft-plugin",
+        "imager-x",
         "imager",
         "fortrabbit"
     ],
@@ -32,7 +33,7 @@
         }
     },
     "extra": {
-        "name": "Imager Storage Driver for fortrabbit Object Storage",
+        "name": "Imager X Storage Driver for fortrabbit Object Storage",
         "handle": "fortrabbit-object-storage-driver",
         "hasCpSettings": false,
         "hasCpSection": false,

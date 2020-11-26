@@ -14,9 +14,9 @@ use craft\helpers\FileHelper;
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 
-use aelvan\imager\models\ConfigModel;
-use aelvan\imager\services\ImagerService;
-use aelvan\imager\externalstorage\ImagerStorageInterface;
+use spacecatninja\imagerx\models\ConfigModel;
+use spacecatninja\imagerx\services\ImagerService;
+use spacecatninja\imagerx\externalstorage\ImagerStorageInterface;
 
 use League\Flysystem\AwsS3v3\AwsS3Adapter;
 
@@ -44,7 +44,7 @@ class FortrabbitObjectStorage implements ImagerStorageInterface
             Craft::error('Invalid configuration of S3 Client: '.$e->getMessage(), __METHOD__);
             return false;
         }
-        
+
         if (isset($settings['folder']) && $settings['folder'] !== '') {
             $uri = ltrim(FileHelper::normalizePath($settings['folder'].'/'.$uri), '/');
         }
