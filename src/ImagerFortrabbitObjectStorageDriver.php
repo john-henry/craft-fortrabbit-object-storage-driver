@@ -26,7 +26,7 @@ use yii\base\Event;
 class ImagerFortrabbitObjectStorageDriver extends Plugin
 {
     public static $plugin;
-    public $schemaVersion = '1.0.0';
+    public $schemaVersion = '2.0.0';
 
     public function init()
     {
